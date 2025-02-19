@@ -81,6 +81,7 @@
 
 #4.10
 
+
 #4.11
 
 #pizza = ['boscaiola', 'diavola', 'margherita']
@@ -262,7 +263,7 @@ if "pomelo" in favorite_fruits:
 '''
 
 #5.8
-
+'''
 names = ['James', 'Steph', 'Kyrie', 'John', 'Admin']
 
 for i in names:
@@ -271,3 +272,19 @@ for i in names:
     
     else:
         print (f"Hello {i}, thank you for logging in again.")
+'''
+
+#5.9
+'''
+names = ['James', 'Steph', 'Kyrie', 'John', 'Admin']
+
+names.clear()
+
+if len(names) == 0:
+    print("We need to find some users!")
+'''
+
+# 5.10
+
+names = ['James', 'Steph', 'Kyrie', 'John', 'Kevin']
+
