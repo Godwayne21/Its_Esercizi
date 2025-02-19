@@ -99,5 +99,175 @@
 #    break
 
 
+#5.1
+'''
+car = "mustang"
+motor = "harley"
+boat = "yacth"
+sport = "basketball"
+shoes = "way of wade"
 
+print("Is car == 'mustang'? I predict True.")
+print(car == 'mustang')
+print("\nIs car == 'audi'? I predict False.")
+print(car == 'audi')
 
+print("\nIs motor == 'harley'? I predict True.")
+print(motor == 'harley')
+print("\nIs motor == 'yamaha'? I predict False.")
+print(motor == 'yamaha')
+
+print("\nIs boat == 'yacth'? I predict True.")
+print(boat == 'yacth')
+print("\nIs boat == 'kayak'? I predict False.")
+print(boat == 'kayak')
+
+print("\nIs sport == 'basketball'? I predict True.")
+print(sport == 'basketball')
+print("\nIs sport == 'soccer'? I predict False.")
+print(sport == 'soccer')
+
+print("\nIs shoes == 'way of wade'? I predict True.")
+print(shoes == 'way of wade')
+print("\nIs shoes == 'lebron'? I predict False.")
+print(shoes == 'lebron')
+'''
+
+# 5.2
+'''
+print ("computer" == "computer")
+print ("computer" == "charger")
+
+print ("Computer".lower() == "computer")
+print ("Computer".lower() == "COMPUTER")
+
+print ( 10 == 10)
+print ( 10 == 5)
+print ( 10 < 5)
+print ( 10 > 5)
+print ( 10 <= 5)
+print ( 10 >= 5)
+
+print ( 10 == 10 and 10 > 5)
+print ( 10 == 10 and 10 < 5)
+print ( 10 == 10 or 10 > 5)
+print ( 10 == 10 or 10 < 5)
+
+transport = ["car", "train", "boat"]
+
+print ("car" in transport)
+print ("bike" in transport)
+'''
+
+# 5.3
+'''
+alien_color = "green"
+
+if alien_color == "green":
+    print ("you just earned 5 points")
+
+if alien_color == "red":
+    None
+'''
+
+# 5.4
+'''
+alien_color = "green"
+
+if alien_color == "green":
+    print ("you just earned 5 points for shooting the alien")
+else:
+    print ("you just earned 10 points")
+
+alien_color = "red"
+
+if alien_color == "green":
+    print ("you just earned 5 points for shooting the alien")
+else:
+    print ("you just earned 10 points")
+'''
+
+#5.5
+'''
+alien_color = "green"
+
+if alien_color == "green":
+    print ("you just earned 5 points")
+elif alien_color == "red":
+    print ("you just earned 10 points")
+else:
+    print ("you just earned 15 points")
+
+alien_color = "yellow"
+
+if alien_color == "green":
+    print ("you just earned 5 points")
+elif alien_color == "yellow":
+    print ("you just earned 10 points")
+else:
+    print ("you just earned 15 points")
+
+alien_color = "red"
+
+if alien_color == "green":
+    print ("you just earned 5 points")
+elif alien_color == "yellow":
+    print ("you just earned 10 points")
+else:
+    print ("you just earned 15 points")
+'''
+
+#5.6
+'''
+age = int(input("What's your age? "))
+
+if age < 2:
+    print ("You're a baby!")
+
+elif age >= 2 & age < 4:
+    print ("You're a toddler!")
+
+elif age >= 4 & age < 13:
+    print ("You're a kid!")
+
+elif age >= 13 & age < 20:
+    print ("You're a teenager!")
+
+elif age >= 20 & age < 65:
+    print ("You're a adult!")
+
+else:
+    print ("You're an aelder!")
+'''
+
+#5.7
+'''
+fruits = ['banana', 'apple', 'grapes', 'mango', 'pomelo']
+favorite_fruits = ['banana', 'grapes', 'mango',]
+
+if "banana" in favorite_fruits:
+    print ("I really like Bananas!")
+
+if "apples" in favorite_fruits:
+    print ("I really like Apples!")
+
+if "grapes" in favorite_fruits:
+    print ("I really like Grapes!")
+
+if "mango" in favorite_fruits:
+    print ("I really like Mango!")
+
+if "pomelo" in favorite_fruits:
+    print ("I really like Pomelo!")
+'''
+
+#5.8
+
+names = ['James', 'Steph', 'Kyrie', 'John', 'Admin']
+
+for i in names:
+    if i == "Admin":
+        print ("Hello Admin, would you like to see a status report?")
+    
+    else:
+        print (f"Hello {i}, thank you for logging in again.")
