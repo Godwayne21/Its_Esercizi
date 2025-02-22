@@ -26,8 +26,15 @@ Mi dispiace Alex, non e' possibile procedere con la generazione di un documento 
 '''
 
 name = str(input("What's your name? "))
-gender = str(input("What's your gender? "))
+gender = str(input("What's your gender? m formale or f for female? "))
 
 match (name, gender):
 
-    case 
+    case (name, "m"):
+        print (f"name: {name} \ngender: Male")
+    
+    case (name, "f"):
+        print (f"name: {name} \ngender: Female")
+    
+    case _:
+        print("Can't identify the gender!")
