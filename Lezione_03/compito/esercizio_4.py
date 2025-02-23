@@ -1,3 +1,4 @@
+# Es. 4
 '''
 Scrivere un programma che consenta all'utente di inserire una sequenza di numeri reali non negativi 
 (sia interi che decimali). L'inserimento termina quando viene fornito un numero negativo, 

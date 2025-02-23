@@ -1,3 +1,4 @@
+# Es. 3
 '''
 Scrivere un programma che acquisisca una stringa inserita dall'utente e 
 generi una nuova stringa che corrisponda alla versione invertita della stringa originale.
