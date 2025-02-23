@@ -9,13 +9,21 @@ Il programma deve gestire anche il caso in cui n1 > n2, calcolando comunque il p
 n1 = int(input("Inserisci il primo numero: "))
 n2 = int(input("Inserisci il secondo numero: "))
 prodotto = 1
-i=n1
 
-while True:
-    if n1<n2:
-        n1, n2 = n2, n1
-    
-    
+if n1 >= n2:
 
+    for i in range(n1, n2 + 1):
 
-print (prodotto)
+        prodotto *= i
+
+        i += 1
+
+else:
+
+    for i in range (n1, n2, -1):
+
+        prodotto *= i
+
+        i -=1
+
+print(prodotto)
