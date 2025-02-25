@@ -20,7 +20,7 @@ Inserisci il voto: 11
 Output: Voto non valido
 '''
 
-x = int(input("What's your vote?: "))
+x = int(input("Inserisci un voto tra 1-10: "))
 
 match x:
 
