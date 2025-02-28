@@ -8,6 +8,31 @@ NOTA.
 Le percentuali devono essere mostrate in output obbligatoriamente con 2 cifre decimali.
 Usare il match statement.
 '''
-lancio = ("Testa o Croce? ")
-volte = range(1,9)
+testa = 0
+croce = 0
+lancio = 0
 
+while lancio < 8:
+
+    x = input("Inserisci 't' o 'T' per Testa e 'c' o 'C' per Croce? ").lower()
+
+    lancio += 1
+
+    match x:
+        case "t" | "T":
+            testa += 1
+        
+        case "c" | "C":
+            croce += 1
+        case _:
+            print("Parola non riconosciuta. ")
+
+            continue
+
+somma = testa + croce
+
+percentuale_testa = (testa/somma) * 100
+percentuale_croce = (croce/somma) * 100
+
+print(f"Totale 'testa': {testa}\nPercentaule 'testa': ({percentuale_testa:.2f})%")
+print(f"Totale 'croce': {croce}\nPercentaule 'croce': ({percentuale_croce:.2f})%")
