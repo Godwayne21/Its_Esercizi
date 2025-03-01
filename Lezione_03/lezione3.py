@@ -285,6 +285,34 @@ if len(names) == 0:
 '''
 
 # 5.10
+'''
+current_users = ['James', 'Steph', 'Kyrie', 'John', 'Kevin']
+new_users = ['James', 'Leo', 'Bob', 'John', 'Ed']
 
-names = ['James', 'Steph', 'Kyrie', 'John', 'Kevin']
+current_users_lower = [a.lower() for a in current_users]
 
+for i in new_users:
+
+    if i.lower() in current_users_lower:
+
+        print(input(f"The name {i} is already taken. Insert a new name: "))
+    
+    else:
+        print("Name is available")
+'''
+
+# 5-11
+
+numbers = [range(1,10)]
+
+for i in numbers:
+
+    if i == 1:
+        print(f"{i}st")
+    
+    elif i == 2:
+        print(f"\n{i}nd")
+    elif i == 3:
+        print(f"\n{i}rd")
+    else:
+        print(f"\n{i}th")
