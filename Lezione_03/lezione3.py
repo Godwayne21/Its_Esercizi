@@ -302,17 +302,76 @@ for i in new_users:
 '''
 
 # 5-11
-
-numbers = [range(1,10)]
+'''
+numbers = list(range(1,10))
 
 for i in numbers:
 
     if i == 1:
         print(f"{i}st")
-    
     elif i == 2:
         print(f"\n{i}nd")
     elif i == 3:
         print(f"\n{i}rd")
     else:
         print(f"\n{i}th")
+'''
+#6-1. Person
+'''
+person = {'name': 'LeBron','last_name': 'James','age': 40, 'city':'Los Angeles' }
+
+for i in person:
+
+    print(f"{person[i]}")
+'''
+
+#6-2. Favorite Numbers
+'''
+favorite = {'Baks': 19,'Dons': 21,'Esi': 4,'Pogs': 4,'Sam':20}
+
+for key,value in favorite.items():
+
+
+    print(f"{key}'s favorite number is: {value}")
+'''
+
+#6-3. Glossary
+'''
+glossary = {
+    'Dog': 'is a domesticated descendant of the gray wolf.',
+    'Cat': 'is a small domesticated carnivorous mammal.',
+    'Monkey': 'is a common name that may refer to most mammals of the infraorder Simiiformes',
+    'Tiger': 'is a large cat and a member of the genus Panthera',
+    'Fish': 'is an aquatic, anamniotic, gill-bearing vertebrate animal with swimming fins and a hard skull, but lacking limbs with digits.'
+}
+
+for key,value in glossary.items():
+
+    print(f"{key}:{value}\n")
+'''
+
+#6-7. People
+'''
+person = {'name': 'LeBron','last_name': 'James','age': 40, 'city':'Los Angeles' }
+person1 = {'name': 'Eleonora','last_name': 'Bughetti','age': 24,'city':'Rome'}
+person2 = {'name': 'Godwayne', 'last_name': 'Rasalan','age': 24,'city':'Rome'}
+
+people = (person,person1,person2)
+
+for i in people:
+    
+    print (f"{i}")
+'''
+#6-8. Pets
+'''
+pet = {'kind': 'dog','name':'Bob','owner':'Kevin'}
+pet1 = {'kind': 'cat','name':'Nips','owner':'Liam'}
+pet2 = {'kind': 'fish','name':'Gloo','owner':'Henry'}
+
+pets =(pet,pet1,pet2)
+
+for i in pets:
+
+    print(f"{i}")
+'''
+
