@@ -375,3 +375,25 @@ for i in pets:
     print(f"{i}")
 '''
 
+#6-9. Favorite Places
+'''
+favorite_places = {'Bob': 'Rome','Liam': 'Los Angeles','Trae': 'Japan'}
+
+for key,value in favorite_places.items():
+
+    print (f"{key}'s favorite place is {value}")
+'''
+
+#6-10. Favorite Numbers
+'''
+favorite = {'Baks': 19,'Dons': [21 , 9],'Esi': 4,'Pogs': 4,'Sam':[20 , 1]}
+
+for key,value in favorite.items():
+
+
+    print(f"{key}'s favorite number is: {value}")
+'''
+
+#6-11. Cities
+
+cities = {'Rome': '','New York': '','Tokyo': ''}
