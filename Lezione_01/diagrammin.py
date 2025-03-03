@@ -17,7 +17,7 @@ else:
 
 #while
 '''
-massimo: int = int(input("Inserisci il primo valore: "))
+massimo: float = float(input("Inserisci il primo valore: "))
 
 count = 1
 
@@ -25,7 +25,7 @@ while count < 4:
 
     count += 1
 
-    n: int= int(input("Inserisci altri valori: "))
+    n: infloatt= float(input("Inserisci altri valori: "))
 
     if n > massimo:
 
@@ -40,25 +40,22 @@ print (f"Il numero più grande è: {massimo}")
 #repeat
 
 '''
-massimo: int = int(input("Inserisci il primo valore: "))
+massimo: float = float(input("Inserisci il primo valore: "))
 
 count = 1
 
 while True:
-    
-    if count == 4:
-        break
-    else:    
-        count += 1
 
-        n: int= int(input("Inserisci altri valori: "))
+        n: float= float(input("Inserisci altri valori: "))
 
         if n > massimo:
 
             massimo = n
+        count+=1
+
+        if count == 4:
+            break        
         
-        else:
-            continue
 
 print (f"Il numero più grande è: {massimo}")
 '''
@@ -66,28 +63,74 @@ print (f"Il numero più grande è: {massimo}")
 #for
 
 '''
-massimo: int = int(input("Inserisci il primo valore: "))
-
-i = 0
+massimo: float = float(input("Inserisci il primo valore: "))
 
 for i in range(3):
-
-    if i == 3:
-
-        print (f"Il numero massimo è: {massimo}")
     
-    else:
-        
-        i += 1
+    n: float = float(input("Inserisci altri numeri: "))
+    
+    if n > massimo:
 
-        n: int = int(input("Inserisci altri numeri: "))
+        massimo = n
 
-        if n > massimo:
-
-            massimo = n
-        
-        else:
-            continue
 
 print(f"Il numero massimo è: {massimo}")
 '''
+
+#3
+'''
+somma = 0
+
+count = 0
+
+while True:
+
+    n:float= float(input("Inserisci un numero: "))
+
+    if n > 0:
+
+        somma += n
+    else:
+        continue
+
+    count += 1
+
+    if count > 5:
+        break
+
+print(f"La somma totale è: {somma}")
+'''
+
+#4
+'''
+n: float = float(input("Inserisci un numero: "))
+
+if n % 2 == 0:
+
+    print(f"Il numero {n} è pari")
+
+else:
+    print(f"Il numero {n} è dispari")
+'''
+
+#5
+
+n:int= int(input("Inserisci un numero: "))
+
+if n < 2:
+    print(f"Il numero  {n} è primo")
+
+else:
+
+    div:int = 2
+
+    while div < n:
+
+        if n % div == 0:
+
+            print(f"Il numero {n} non è primo")
+
+        else:
+            div += 1
+
+        print(f"Il numero {n} è primo")
