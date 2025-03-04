@@ -20,8 +20,8 @@ Output: Il punto (0,0) si trova nell'origine.
 
 '''
 
-x = (input("Inserisci il valore nell'asse x:"))
-y = (input("Inserisci il valore nell'asse y:"))
+x = float(input("Inserisci il valore nell'asse x:"))
+y = float(input("Inserisci il valore nell'asse y:"))
 
 match (x,y):
     case (0,0):
@@ -30,11 +30,11 @@ match (x,y):
         print("Il punto si trova sull'asse X.")
     case(0,y):
        print("Il punto si trova sull'asse Y.")
-    case 1 if x > 0 and y > 0:
+    case(x,y) if x > 0 and y > 0:
         print("Il punto si trova nel primo quadrante.")
-    case 2 if x < 0 and y > 0:
+    case(x,y) if x < 0 and y > 0:
         print("Il punto si trova nel secondo quadrante.")
-    case 3 if x < 0 and y < 0:
+    case(x,y) if x < 0 and y < 0:
         print("Il punto si trova nel terzo quadrante.")
-    case 4 if x > 0 and y < 0:
+    case(x,y) if x > 0 and y < 0:
         print("Il punto si trova nel quarto quadrante.")
