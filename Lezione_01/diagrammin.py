@@ -115,22 +115,39 @@ else:
 
 #5
 
+'''
 n:int= int(input("Inserisci un numero: "))
 
+is_prime = True
+
 if n < 2:
-    print(f"Il numero  {n} è primo")
+    is_prime=False
 
 else:
-
-    div:int = 2
+    div = 2
 
     while div < n:
 
         if n % div == 0:
 
-            print(f"Il numero {n} non è primo")
-
+            is_prime = True
+        
         else:
             div += 1
+    
+    else:
+        is_prime = False
 
-        print(f"Il numero {n} è primo")
+if is_prime == True:
+
+    print (f"{n} è un numero primo")
+
+else:
+    
+    print (f"{n} è un numero primo")
+'''
+
+# 6
+
+n:float = int("")
+
