@@ -149,5 +149,19 @@ else:
 
 # 6
 
-n:float = int("")
+n:float = float(input("Insert a number: "))
 
+while n % 1 == 0 and n > 0:
+
+    fattoriale = 1
+
+    i = 1
+
+    if i == n:
+        print
+    
+    else:
+
+        fattoriale *= i
+
+        i += 1
