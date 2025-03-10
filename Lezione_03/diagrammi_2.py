@@ -67,9 +67,7 @@ print(f"Il tempo assegnato a Est-Ovest è: {time_eo}")
 '''
 
 # 3
-
-#nome_corso = str(input("Inserisci il nome del corso: "))
-
+'''
 max_posti = 100
 
 while True:
@@ -108,4 +106,10 @@ while True:
 
         case _:
             print ("Comando non riconosciuto.")
+'''
+
+# 4
+
+n_tutor =  10
+attesa = 0
 
