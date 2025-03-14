@@ -107,9 +107,156 @@ while True:
         case _:
             print ("Comando non riconosciuto.")
 '''
-
 # 4
-
+'''
 n_tutor =  10
 attesa = 0
 
+while True:
+
+    studente = str(input("Nome? "))
+
+    if n_tutor > 0:
+
+        n_tutor -= 1
+
+        print("Tutor assegnato con successo")
+    
+    else:
+
+        attesa += 1
+
+        print("Studente in attesa")
+    
+    if n_tutor == 0 and attesa > 50:
+
+        break
+    else:
+        continue
+'''
+
+# 5
+'''
+n = int (input("Inserisci un numero: "))
+
+while True:
+
+    if n % 1 == 0 and n > 0:
+
+        somma = 0
+        i = 1
+
+        while i < n:
+            somma += i *i
+
+            i += 1
+        else:
+            print(f"La somma è {somma}")
+
+            break
+
+    else: 
+
+        print("Errore, n deve essere positivo.")
+        break 
+'''
+
+# 6
+'''
+x = int(input("Inserisci un numero: "))
+somma = 0
+
+if x > 0:
+    i = 0
+
+else:
+    print("Errore, x deve essere positivo.")
+
+while i!= 10:
+
+    n = int(input("Inserisci un altro numero: "))
+
+    if x % 2 == 0:
+        if n > x/2:
+
+            somma += n
+        
+        else:
+            if n < x:
+                somma += n
+        
+        i += 1
+
+else:
+    print(f"La somma è {somma}")
+'''
+
+# 7
+'''
+cont = 0
+somma = 0
+
+while True:
+
+    scelta = str(input("Vuoi inserire in voto? "))
+
+    match scelta:
+        
+        case scelta if scelta == 'sì' or 'si':
+
+            voto =int(input("Inserisci il voto: "))
+
+            if voto > 0:
+
+                cont += 1
+
+                somma += voto
+
+            else:
+                print("Errore")
+    
+        case scelta if  scelta == 'no':
+
+            if cont > 0:
+            
+                media = somma/cont
+
+                print(f"La media è: {media}")
+        
+            else:
+                print("Nessun voto inserito.")
+
+            break
+'''
+# 8
+'''
+a = int(input("Inserisci un numero: "))
+b = int(input("Inserisci un altro numero: "))
+
+if a < b:
+    if a > 0 and b:
+        if a % 1 == 0 and b % 1 == 0:
+            somma = 0
+            i = a
+
+            while True:
+
+                if i > b:
+                    print(f"La somma è {somma}")
+                    break 
+
+                else:
+                    somma += i
+                    i += 1
+        else:
+            print("a e b devono essere interi")
+    else:
+        print("a e b devono essere positivi")
+else:
+    print("a deve essere minore di b")
+'''
+
+# 9
+
+while True:
+    n = int(input("Inserisci un numero: "))
