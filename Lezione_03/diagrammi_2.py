@@ -257,6 +257,37 @@ else:
 '''
 
 # 9
-
+'''
+n = int(input("Inserisci un numero: "))
 while True:
-    n = int(input("Inserisci un numero: "))
+
+    if n > 0:
+
+        if n % 1 == 0:
+            cont = 0
+            i = 0
+
+            while i != 0:
+
+                x = int(input("Insert a number: "))
+
+                if x % n == 0:
+
+                    cont +=1
+                
+                i += 1
+                print(f"I numeri divisibili per {n} sono {cont}")
+
+                break
+        
+        else:
+            print("n deve essere intero positivo")
+            n = int(input("Inserisci un altro numero: "))
+    
+    else:
+        print("n deve essere positivo")
+        break
+'''
+
+# 10
+
