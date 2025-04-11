@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Dom</title>
+
+    <script>
+
+        function invio(){
+            var cognome = document.getElementById(cognome).value;
+
+            if (cognome === '') {
+                var errore = document.getElementById(errore);
+
+                errore.innerHTML = 'Errore';
+            }
+
+        }
+            
+            
+        
+
+    </script>
+
+</head>
+
+
+<body>
+
+    <h1 align = "center">Dati</h1>
+    
+    <div align = "center">
+        <table style="text-align: left;">
+    
+            <tr><td><form action="post" >
+            Cognome: </td> <td><input type="text" name="cognome" id="cognome" maxlength="40" style="width: 450px;"></form></td></tr>
+    
+            <tr><td><form action="post">
+            Nome: </td> <td><input type="text" name="nome" id="nome" maxlength="30" style="width: 450px;"></form></td></tr>
+
+            <tr><td><form action="post">
+            Matricola: </td> <td><input type="text" name="nome" id="matricola" maxlength="12" style="width: 450px;"></form></td></tr>
+
+            <tr><td>Regione di Residenza: </td>
+            <td>
+            <select name="regione" id="regione" style="width: 450px;">
+            <option value="EE">Estera</option>
+            <option value="RM">Roma</option>
+            </select>
+            </td></tr>
+
+            <tr><td><form action="post">
+            Email: </td> <td><input type="text" name="email" id="email" maxlength="30" style="width: 450px;"></form></td></tr>
+            
+            <tr><td><form action="post">
+            Telefono: </td> <td><input type="text" name="telefono" id="telefono" maxlength="15" style="width: 450px;"></form></td></tr>
+
+            <tr><td>
+            Richieste Particolari: </td> <td><textarea name="richieste" id="richieste" rows="12" cols="60"></textarea></td></tr>
+
+            <tr><td><button onclick="invio()" style = "width: 150px;">Invio</button></td></tr>
+            <tr><td></td></tr>
+            <tr><td><button style = "width: 150px;">Reset</button></td></tr>
+
+        </table></div>
+
+        <div id="errore"></div>
+
+
+</body>
+</html>
