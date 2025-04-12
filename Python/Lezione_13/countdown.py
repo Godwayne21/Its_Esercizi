@@ -32,5 +32,4 @@ def countdown(n)->None:
 
         n -= 1 # sottraggo 1 ad n
 
-countdown(5)
-countdown(-5)
+countdown(10)
