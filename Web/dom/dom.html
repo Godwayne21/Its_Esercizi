@@ -5,22 +5,18 @@
     <title>Dom</title>
 
     <script>
-
         function invio(){
-            var cognome = document.getElementById(cognome).value;
-            var errore = document.getElementById(errore);
+            var cognome_d = document.getElementById("cognome");
+            var errore_d = document.getElementById("errore");
 
-            if (cognome === '') {
-
-                errore.innerHTML = 'Errore';
+            if (cognome_d === ""){
+            
+                errore_d.textContent = 'errore'
             }
-
         }
-            
-            
-        
-
     </script>
+
+
 
 </head>
 
@@ -43,7 +39,7 @@
 
             <tr><td>Regione di Residenza: </td>
             <td>
-            <select name="regione" id="regione" style="width: 450px;">
+            <select name="regione" id="regione" style="width: 455px;">
             <option value="EE">Estera</option>
             <option value="RM">Roma</option>
             </select>
