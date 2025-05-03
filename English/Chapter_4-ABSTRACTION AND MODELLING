@@ -1,0 +1,53 @@
+This chapter introduced abstraction as a key driver behind helping to understand
+solutions and make them more powerful. By picking out only the relevant details and
+suppressing the remainder, you can represent only what it is essential to a problem,
+leaving you free to concentrate on solving the essence of the problem. By using layers of
+abstraction, you can consider a problem from multiple points of view, while still benefitting from a reduction of mental load.
+
+Modelling, a type of abstraction, plays an important part in problem-solving by representing the key parts of a solution. 
+This helps you to understand the system you’re trying to build, as well as predict its eventual behaviour. 
+Models come in numerous forms, which you can freely choose from.
+
+1. Introduction
+Hypothesis testing is used to make decisions about population parameters based on sample data.
+Two types of hypotheses:
+Null Hypothesis (H₀): Assumes no effect or no difference.
+Alternative Hypothesis (H₁): Indicates the presence of an effect or difference.
+
+2. Types of Hypothesis Tests
+One-tailed test: Tests for deviation in one direction (e.g., H₁: μ > μ₀).
+Two-tailed test: Tests for deviation in both directions (e.g., H₁: μ ≠ μ₀).
+
+3. Errors in Hypothesis Testing
+Type I Error (α): Rejecting H₀ when it is true.
+Type II Error (β): Failing to reject H₀ when it is false.
+Power of a test: Probability of correctly rejecting a false H₀, i.e., 1 - β.
+
+4. Critical Region and Level of Significance
+Critical region: The range of values where H₀ is rejected.
+Level of significance (α): The maximum probability of making a Type I error (commonly 0.05 or 0.01).
+
+5. Procedure of Hypothesis Testing
+State H₀ and H₁.
+Choose the significance level α.
+Determine the test statistic.
+Define the critical region.
+Compute the test statistic from sample data.
+Make a decision (reject or fail to reject H₀).
+
+6. Large Sample Tests
+Z-tests are used when sample size > 30:
+Test for population mean.
+Test for difference between two means.
+Test for proportions and difference of proportions.
+
+7. Small Sample Tests
+t-tests are used when sample size ≤ 30:
+Single mean test.
+Two means (independent and paired samples).
+Chi-square tests:
+Test for independence.
+Test for goodness of fit.
+
+8. Examples and Exercises
+The chapter includes worked-out examples and exercises to practice applying the hypothesis testing procedures using Z, t, and χ² statistics.

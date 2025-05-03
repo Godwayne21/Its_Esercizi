@@ -1,0 +1,51 @@
+Logic and systematic reasoning are key underpinnings of CT because computer programs are essentially an automation of our reasoning processes.
+Therefore, writing solutions requires a good understanding of logic and the ability to use proper notation over natural language. 
+This chapter has covered the basics of inductive and deductive reasoning, 
+as well as the importance of Boolean and symbolic forms of logic to computing.
+
+Logic is an essential part of algorithms, which are the among the bedrock of computing. 
+They are the core of any program and thus play a part in every computer-based solution. 
+This chapter introduced the basic building blocks of every algorithm and the notion of state.
+
+It’s important in the case of both logic and algorithms to respect the need for a systematic approach. 
+Although both can make intuitive sense on some level, it’s also easy to make mistakes when considering them that way. 
+The use of correct logical notation will help you to avoid making common mistakes.
+
+What is an Algorithm?
+A precise, step-by-step set of instructions with a clear start and end, used to solve problems or perform tasks.
+
+Difference from Logic:
+Logic helps determine truth; algorithms use logic to perform actions in a structured way.
+
+Core Properties of Algorithms:
+Sequence: Steps must happen in a specific order.
+
+Iteration: Repeating steps using loops.
+
+Selection: Making decisions using conditions (if, else).
+
+State: The current values of variables that track progress.
+
+Variables:
+Store and update data during execution (e.g., scores, counters).
+
+Controlling Execution:
+Loops (Iteration): Repeat until a condition is false.
+
+Conditionals (Selection): Execute actions only when conditions are met.
+
+Common Mistakes ("Gotchas"):
+Ambiguity: Computers need precise, clear instructions.
+
+Misuse of logic operators (and, or, not).
+
+Forgetting to handle all possible conditions (e.g., using if without else).
+
+Ignoring logical precedence rules—use parentheses to clarify.
+
+Best Practices:
+Always be explicit.
+
+Use correct logical symbols.
+
+Avoid relying on common sense—computers don’t have it.

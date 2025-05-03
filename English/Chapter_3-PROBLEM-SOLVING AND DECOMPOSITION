@@ -1,0 +1,34 @@
+Decomposition and generalisation are related. 
+Whereas decomposition involves breaking the problem down into smaller parts,  generalisation involves combining those smaller parts. 
+These actions are not the inverse of one another; when you generalise the individual parts, 
+you’re not putting the problem together again in the same way as before.
+
+The point of generalisation is to look at the decomposed parts and find ways to make
+the solution easier to handle and more widely applicable to similar problems. In the
+example above, instead of having numerous parts which can each draw only one type
+of eye, there is one generic part that can draw many different types of eye.
+
+Research Design:
+A structured framework that guides the collection and analysis of data.
+Typically qualitative, quantitative, or mixed-methods, depending on the study's objectives.
+
+Population and Sampling:
+Description of the target population.
+Sampling techniques (e.g., random sampling, purposive sampling).
+Sample size justification.
+
+Data Collection Methods:
+Instruments used (e.g., questionnaires, interviews, observation).
+Procedures for administering tools.
+Ethical considerations and approvals obtained.
+
+Data Analysis Techniques:
+Qualitative data: thematic analysis, coding procedures.
+Quantitative data: statistical methods, software tools (e.g., SPSS, Excel).
+
+Validity and Reliability:
+Steps taken to ensure accuracy and consistency of data.
+Pilot studies and expert validation may be discussed.
+
+Limitations of the Study:
+Constraints in design, sampling, or tools that may affect results.

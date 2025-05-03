@@ -1,0 +1,13 @@
+Evaluation of a solution encompasses many aspects. The most important aspect of a
+solution is its correctness, that is, does it actually solve the original problem? Beyond
+correctness, there are numerous other aspects to the quality of a solution. Which ones
+are important vary from solution to solution. This chapter examined several.
+
+Efficiency measures the time and space usage of a solution to ensure that it solves a
+problem with acceptable usage of resources. Elegance determines whether a solution
+maximises both effectiveness and simplicity. Usability introduces a human aspect to
+evaluation by examining whether the user finds a solution easy and satisfying to use.
+
+In these aspects and more, a degree of trading off is involved. A solution cannot optimise
+all quality aspects all the time. An essential part of forming a solution is deciding which
+quality aspects are more important and so which ones are chosen for optimisation.
