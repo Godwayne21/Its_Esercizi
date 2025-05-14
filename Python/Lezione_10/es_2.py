@@ -18,4 +18,7 @@ def calcola_stipendio(x:int):
         extra = x - 40
         normale = x -extra
 
-        return extra * 15
+        return extra * 15 + normale * 10
+
+print(calcola_stipendio(40)) # Output: 400.0
+print(calcola_stipendio(45)) # Output: 475.0
