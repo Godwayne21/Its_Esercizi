@@ -6,3 +6,10 @@ Non utilizzare nessuna funzione della libreria math!
 Test case: 
 print(integerPower(3, 4)) # Output: 81
 '''
+
+def integerPower(b:int,e:int)->int:
+    
+    if b % 1 == 0 and e % 1 == 0 and e > 0:
+        return b**e
+
+print(integerPower(3, 4)) # Output: 81

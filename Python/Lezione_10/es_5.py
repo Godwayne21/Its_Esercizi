@@ -5,3 +5,9 @@ Per calcolare l'ipotenusa, si può ricorrere al teorema di Pitagora.
 Test case:
 print(hypotenuse(3.0, 4.0)) # Output: 5.0
 '''
+
+def hypotenuse(x:float, y:float) -> float:
+
+    return (x**2 + y**2) * 0.5
+
+print(hypotenuse(3.0, 4.0)) # Output: 5.0
