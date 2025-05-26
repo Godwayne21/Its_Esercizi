@@ -35,7 +35,7 @@ class Telefono:
         return self.numero
     
     def __hash__(self)->int:
-        return self.numero
+        return hash(self.numero())
     
     def __eq__(self, other:Any)->bool:
         if other is None or not isinstance(other, type(self)) or hash(self) != hash(other):
@@ -52,7 +52,7 @@ class Stipendio:
         return self.stipendio
     
     def __hash__(self)->int:
-        return self.stipendio
+        return hash(self.stipendio())
     
     def __eq__(self, other:Any)->bool:
         if other is None or not isinstance(other, type(self)) or hash(self) != hash(other):
@@ -69,7 +69,7 @@ class Budget:
         return self.budget
     
     def __hash__(self)->int:
-        return self.budget
+        return hash(self.budget())
     
     def __eq__(self, other:Any)->bool:
         if other is None or not isinstance(other, type(self)) or hash(self) != hash(other):
