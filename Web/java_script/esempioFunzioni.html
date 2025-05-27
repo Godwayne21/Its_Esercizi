@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funzioni</title>
+</head>
+<body>
+
+    <div id="risultato"></div>
+    <div id="saluto"></div>
+
+    <script>
+        // esempio di iuna funzione che non ritorna nulla, scrive nella pagina
+        function somma(num1,num2){
+            document.getElementById("risultato").innerHTML = "La somma è " + num1 + num2;
+        }
+
+        somma (2,3); //5
+        somma (5); // NaN
+
+        // esempio funzione che ritorna un valore
+        function benvenuto(nome = "guest"){
+            return "Welcome " + nome;
+        }
+
+        let nome = prompt ("Nome?")
+        let output = benvenuto("Bob");
+        document.getElementById("saluto").innerHTML = output;
+        document.getElementById("saluto").innerHTML = benvenuto(nome);
+
+    </script>
+
+</body>
+</html>
