@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio 4.8</title>
+</head>
+<body>
+    <h1>Esercizio 4.8</h1>
+    <div id="output"></div>
+    <script>
+        const numbers = [];
+        var count = 1;
+        let even = 0;
+        let odd = 0;
+        while (count <= 10) {
+            var number = parseInt(prompt("Insert a number"));
+            numbers.push(number);
+            count++;
+        };
+        for (let index = 0; index < numbers.length; index++) {
+            const element = numbers[index];
+            var divider = element % 2;
+            if (divider == 0) {
+                even++;
+            } else {
+                odd++;
+            };
+        };
+        alert(numbers)
+        document.getElementById("output").innerHTML = "Il numero di numeri pari è " + even + ", il numero di numeri dispari è " + odd;
+    </script>
+</body>
+</html>

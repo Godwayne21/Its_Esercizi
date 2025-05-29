@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio 4.6</title>
+</head>
+<body>
+    <h1>Esercizio 4.6</h1>
+    <div id="ciclefor">Cicle For</div>
+    <script>
+        var numbers = [71, 35, 15, 24, 52]
+        var sum = 0;
+        for (let index = 0; index < numbers.length; index++) {
+            const element = numbers[index];
+            sum = sum + element;
+            var average = sum / (index + 1)
+            var new_div = document.createElement("div");
+            new_div.innerHTML = "La somma è uguale a " + sum + " e la media è uguale a " + average;
+            document.getElementById("ciclefor").appendChild(new_div);
+        }
+    </script>
+</body>
+</html>

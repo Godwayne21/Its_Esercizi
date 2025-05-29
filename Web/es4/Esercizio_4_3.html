@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio 4.3</title>
+</head>
+<body>
+    <h1>Esercizio 4.3</h1>
+    <div id="ciclefor">Ciclo For</div>
+    <br>
+    <br>
+    <div id="ciclewhile">Ciclo While</div>
+    <script>
+        var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        for (let index = 0; index < numbers.length; index++) {
+            const element = numbers[index];
+            var new_div = document.createElement("div");
+            new_div.innerHTML = element + 5;
+            document.getElementById("ciclefor").appendChild(new_div);
+        }
+        var cont = 0
+        while (cont<=10) {
+            var new_div = document.createElement("div");
+            new_div.innerHTML = cont + 5;
+            document.getElementById("ciclewhile").appendChild(new_div);
+            cont++;
+        }
+    </script>
+</body>
+</html>

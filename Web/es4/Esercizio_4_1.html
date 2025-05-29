@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio 4.1</title>
+</head>
+<body>
+    <div id="risultato"></div>
+
+    <script>
+        var multiplier = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        var x = parseInt(prompt("Inserisci il numero di cui fare la tabellina"));
+
+        for (let index = 0; index < multiplier.length; index++) {
+            var multiply = (multiplier[index]*x);
+            console.log(multiply);
+            var new_div = document.createElement("div");
+            new_div.innerHTML = multiply;
+            document.getElementById("risultato").appendChild(new_div);
+        }
+    </script>
+</body>
+</html>
