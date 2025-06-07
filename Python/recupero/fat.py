@@ -1,6 +1,4 @@
 def fat(x:int)->int:
-
-    count = x
     
     if x == 1:
         return 1
