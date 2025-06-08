@@ -50,3 +50,38 @@ class ContactManager:
 
             else:
                 self.contacts [contact_name] = list.pop(phone_number)
+                return self.contacts
+    
+    def  update_phone_number(self,contact_name: str, old_phone_number: str, new_phone_number: str)-> dict:
+
+        for contact_name,old_phone_number in self.contacts.items():
+
+            if contact_name not in self.contacts:
+                raise FileNotFoundError ('Errore: il contatto non esiste.')
+            
+            elif old_phone_number not in self.contacts[contact_name]:
+                raise FileNotFoundError ('Errore: il numero di telefono non è presente.')
+            
+            else:
+                self.contacts [contact_name] = [new_phone_number]
+                return self.contacts
+    
+    def list_contacts(self)->list:
+        contacts = []
+        for key in self.contacts:
+            contacts.append(key)
+        
+        return contacts
+    
+    def list_phone_numbers(self, contact_name: str)->list:
+
+        for contact_name in self.contacts:
+            return self.contacts [contact_name]
+    
+    def search_contact_by_phone_number(self, phone_number: str)->list:
+
+        for key in self.contacts:
+
+            if phone_number in self.contacts [key]:
+
+                return self.contacts[key]
