@@ -8,19 +8,11 @@ def RicercaBinaria(num:int, lista:list)->bool:
 
     mid = len(lista) // 2
 
-    meta = lista[:mid]
-
     if num > mid:
-
-        if num < lista[-1]:
-
-            lista2 = lista - meta
-            mid2 = len(lista2) // 2
-            meta_lista2 = lista2 [:mid2]
+        for i in lista:
+            if i <= lista[mid]:
+                lista.pop(i)
             
-            if num > mid2:
+            mid2 = len(lista) //2
 
-                
-        
-        else:
-            return False
+            
