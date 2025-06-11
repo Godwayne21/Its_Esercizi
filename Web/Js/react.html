@@ -1,16 +1,38 @@
- <!DOCTYPE html>
- <html lang="en">
- <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
- </head>
- <body>
-    <div id=""root> 
-
-    </div>
-
+</head>
+<body>
+    <div id="root"></div>
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
- </body>
- </html>
+    <script>
+         
+         const rootElement=document.querySelector("#root");
+         const root =ReactDOM.createRoot(rootElement);
+         const e = React.createElement;
+         const h1=React.createElement("h1",{key:"h1",
+            style:{
+                color: "purple",
+                width:"350px"
+            },
+            className:"big",
+            onClick:ele=>{console.log(ele.target)}
+         },"Linguaggi conosciuti");
+
+         const main = e("main", {key:"h1"}, h1)
+         const ul =e("ul",{key:"ul"},[
+            e("li",{key:"php"},"PHP"),
+            e("li",{key:"java"},"Java"),
+            e("li",{key:"js"},"JS")
+         ]);
+
+        console.log(rootElement);
+        root.render([main,ul]);
+
+    </script>
+</body>
+</html>
