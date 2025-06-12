@@ -40,6 +40,10 @@ class Progetto:
     def ult_imp(self,impiegato,data)->str:
         mass = date.min()
         jeff = None
+
+        if not self.impiegati:
+            raise ValueError("Vuoto")
+        
         for impiegato,data in self.impiegati.items():
             if data >= mass:
                 mass = data
