@@ -22,9 +22,3 @@ class Impiegato:
     
     def get_stipendio (self, stipendio:float)->str:
         return self.stipendio
-
-    def __hash__(self)->int:
-        return (self.nome(),self.cognome(),self.nascita(),self.stipendio())
-    
-    def __eq__(self, other:Any)->bool:
-        

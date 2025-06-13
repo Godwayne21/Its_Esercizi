@@ -35,3 +35,5 @@ print("dip1.telefoni() = " + str(dip1.telefoni()))
 dip1.add_telefono(Telefono("3481265413"))
 
 print("dip1.telefoni() = " + str(dip1.telefoni()))
+
+
