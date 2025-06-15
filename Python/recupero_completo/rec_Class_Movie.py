@@ -39,12 +39,30 @@ class Customer:
             if movie in self.rented_movies or movie.is_rented:
                 print (f"Il film '{movie.title}' è stato noleggiato da questo cliente.")
             else:
+                movie.is_rented = True
                 self.rented_movies.append(movie)
     
     def return_movie(self, movie: Movie)->None:
 
         if movie in self.rented_movies:
+            movie.is_rented = False
             self.rented_movies.remove(movie)
         
         else:
             print (f"Il film '{movie.title}' non è stato noleggiato da questo cliente.")
+
+class VideoRentalStore:
+
+    def __init__(self, movies: dict[str, Movie], customers: dict[str, Customer])-> None:
+
+        self.movies = movies if movies is not None else {}
+        self.customers = customers if customers is not None else {}
+
+    def add_movie(self, movie_id: str, title: str, director: str)->None:
+
+        if movie_id not in self.movies:
+
+            self.movies [movie_id] = Movie[movie_id,title,director]
+        
+        else:
+            print (f"Il film con ID '{movie_id}' esiste già.")
