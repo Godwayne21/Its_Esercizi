@@ -55,5 +55,6 @@ class Frazioni:
         else:
             return 1
 
+    def semplifica(l:list)->list:
 
-n
+        if 
