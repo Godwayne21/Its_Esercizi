@@ -19,12 +19,11 @@ Il più lungo è Valentina con 9 caratteri.'''
 
 
 def nomi(x:list[str])->None:
-    x = []
 
     while True:
         nome = input("Inserisci un nome: ")
 
-        if len(x) < 30 and nome != '' or ' ' and nome not in x:
+        if len(x) < 30 and nome != '' and nome not in x:
 
             x.append(nome)
         
@@ -33,5 +32,6 @@ def nomi(x:list[str])->None:
     
     lunga = max(x, key=len)
 
-    return print(f"Hai inserito {len(x)} nomi distinti./n Il più lungo è {lunga} con {len(lunga)} caratteri.'''") 
+    return print(f"Hai inserito {len(x)} nomi distinti.\nIl più lungo è {lunga} con {len(lunga)} caratteri.'''") 
 
+nomi([])
