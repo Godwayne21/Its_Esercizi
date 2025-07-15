@@ -2,6 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import Componente1 from './Componente1';
 import Clock from './Clock';
+import CambiaNome from './cambiaNome';
+import LoginForm from './LoginForm';
 
 //function getDate(date){
 //  return date.toLocaleDateString()+" "+ date.toLocaleTimeString() 
@@ -10,9 +12,15 @@ import Clock from './Clock';
 function App() {
 
   let nome = "Godwayne";
+
+
   return (
     <>
     <div className="App">
+
+    <CambiaNome></CambiaNome>
+    <LoginForm></LoginForm>
+
       <h1>Primo Elemento {nome}</h1>
       <Componente1>Godwayne</Componente1>
       <Componente1/>
@@ -31,6 +39,8 @@ function App() {
       </footer>
   </>
   );
+
+
   
 };
 
