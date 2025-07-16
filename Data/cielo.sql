@@ -26,6 +26,17 @@ create table volo (
 
 );
 
+create table arrpart (
+    codice postinteger not null,
+    comp stringam not null,
+    primary key (codice, comp),
+    foreign key (codice, comp)
+        references volo(codice, comp),
+    partenza codIATA not null,
+    arrivo codIATA not null,
+    fk...
+);
+
 create table aereoporto(
     codice codIATA primary key,
     nome stringam not null,
@@ -37,18 +48,9 @@ create table luogoaereoporto (
     citta stringam not null,
     nazione stringam not null,
 
-)
-
-create table arrpart (
-    codice postinteger not null,
-    comp stringam not null,
-    primary key (codice, comp),
-    foreign key (codice, comp)
-        references volo(codice, comp),
-    partenza codIATA not null,
-    arrivo codIATA not null,
-    fk...
 );
+
+
 
 alter table volo
     add constraint volo arrpart_fk
