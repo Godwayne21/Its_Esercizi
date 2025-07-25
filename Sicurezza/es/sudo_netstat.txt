@@ -1,0 +1,14 @@
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 127.0.0.53:53           0.0.0.0:*               LISTEN      664/systemd-resolve 
+tcp        0      0 127.0.0.1:631           0.0.0.0:*               LISTEN      809/cupsd           
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      804/sshd: /usr/sbin 
+tcp        0      0 0.0.0.0:8000            0.0.0.0:*               LISTEN      1302/docker-proxy   
+tcp        0      0 0.0.0.0:5432            0.0.0.0:*               LISTEN      1279/docker-proxy   
+tcp        0      0 172.21.11.11:45914      185.125.190.27:443      ESTABLISHED 723/snapd           
+tcp        0      0 172.21.11.11:39818      185.125.190.81:80       TIME_WAIT   -                   
+tcp6       0      0 :::22                   :::*                    LISTEN      804/sshd: /usr/sbin 
+tcp6       0      0 :::8000                 :::*                    LISTEN      1308/docker-proxy   
+tcp6       0      0 ::1:631                 :::*                    LISTEN      809/cupsd           
+tcp6       0      0 :::5432                 :::*                    LISTEN      1286/docker-proxy   
+tcp6       0      0 ::1:3350                :::*                    LISTEN      796/xrdp-sesman     
