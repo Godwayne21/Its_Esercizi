@@ -19,7 +19,7 @@ function App() {
     <div className="App">
 
     <CambiaNome></CambiaNome>
-    <LoginForm></LoginForm>
+  <FetchComponents></FetchComponents>
 
       <h1>Primo Elemento {nome}</h1>
       <Componente1>Godwayne</Componente1>
