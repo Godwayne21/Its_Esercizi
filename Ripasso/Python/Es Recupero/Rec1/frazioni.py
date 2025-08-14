@@ -12,7 +12,44 @@ Suggerimento: per verificare che il numeratore ed il denominatore siano numeri i
 class Frazione:
 
     def __init__(self,_numeratore:int, _denominatore:int):
-        self._numeratore = _numeratore
-        self._denominatore = _denominatore
+        self._numeratore  (_numeratore)
+        self._denominatore  (_denominatore)
 
     def set_numeratore(self,_numeratore)->None:
+
+        if isinstance (_numeratore,int):
+            self._numeratore = _numeratore
+        
+        else:
+            self._numeratore = 13
+        
+    def set_denominatore (self, _denominatore)->None:
+
+        if isinstance(_denominatore, int) and _denominatore > 0:
+            self._denominatore = _denominatore
+        
+        else:
+            self._denominatore = 5
+    
+    def get_numeratore (self)->int:
+        return self._numeratore
+
+    def get_denominatore (self)->int:
+        return self._denominatore
+    
+    def __str__(self)->str:
+        
+        return f'{self._numeratore} / {self._denominatore}'
+    
+    def value (self)->float:
+
+        return round (self._numeratore / self._denominatore, 3)
+
+    def mcd(self,x:int,y:int)->int:
+
+        divisore = 1
+
+        lista = []
+
+        if x > y:
+            
