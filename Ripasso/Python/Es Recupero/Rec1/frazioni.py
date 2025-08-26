@@ -52,4 +52,10 @@ class Frazione:
         lista = []
 
         if x > y:
+
+            if x % divisore == 0:
+                lista.append(divisore)
+                divisore += 1
             
+            else:
+                
