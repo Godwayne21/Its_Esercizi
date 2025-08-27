@@ -1,5 +1,10 @@
-x = "Anna"
+def mcd(x:int, y:int)->int:
 
-l =[x]
+    while y:
 
-print (l)
+        x,y = y, x % y
+    
+    return x
+
+
+print(mcd(12,18))

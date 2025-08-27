@@ -45,17 +45,13 @@ class Frazione:
 
         return round (self._numeratore / self._denominatore, 3)
 
-    def mcd(self,x:int,y:int)->int:
+    def mcd(x:int, y:int)->int:
 
-        divisore = 1
+        while y:
 
-        lista = []
+            x,y = y, x % y
+        
+        return x
 
-        if x > y:
-
-            if x % divisore == 0:
-                lista.append(divisore)
-                divisore += 1
-            
-            else:
-                
+        
+        
