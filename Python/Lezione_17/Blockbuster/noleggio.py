@@ -21,23 +21,25 @@ class Noleggio():
             print (f"Il film scelto è disponibile: {film.getTitle()}!")
             return False
         
-    def rentAMovie(self, film:Film, id_client)->None:
+    def rentAMovie(self, film:Film, clientID)->None:
 
         if film in self.__film_list__:
              
-             print (f"Il cliente {id_client:int} ha noleggiato {film.getTitle()}!")
+             print (f"Il cliente {clientID:int} ha noleggiato {film.getTitle()}!")
              self.__film_list__.remove(film)
         
-             if id_client not in self.__rented_film__:
+             if clientID not in self.__rented_film__:
                 
                 client_film = []
-                self.__rented_film__[id_client] = client_film
+                self.__rented_film__[clientID] = client_film
             
              else:
-                self.__rented_film__[id_client] = client_film.append(film)
+                self.__rented_film__[clientID] = client_film.append(film)
         
         else:
             print(f"Non è possibile nolegiare il film {film.getTitle()}!")
 
     def giveBack(self, film, clientID, days)->int:
-        
+        print (f"Cliente: {clientID}! La penale da pagare per il film {film.getTitle()} e' di {film.calcolaPenaleRitardo()} euro!")
+
+        self.__rented_film__[clientID] = clientID.remove(film)
