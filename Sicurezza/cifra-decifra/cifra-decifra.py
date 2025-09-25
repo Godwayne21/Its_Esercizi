@@ -46,3 +46,17 @@ print("Decrypted Text:", decrypted_text)
 
 
 # prova di decifra brute force
+enc = "OgJuOYJZT0FDb47DBOkNgA=="
+key = "XXXXIsASecretKey"
+
+for p1 in "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ":
+    for p2 in "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ":
+        for p3 in "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ":
+            for p4 in "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ":
+                key = p1 + p2 + p3 + p4 + "IsASecretKey"
+                try:
+                    dec = decrypt(enc, key)
+                    print("La chiave è: ", key, " e la stringa è: ", dec)
+                except:
+                    # continua
+                    continue
