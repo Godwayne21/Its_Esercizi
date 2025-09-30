@@ -24,6 +24,8 @@ e_pub = 3
 #trasforma il modulo in numero intero
 n_decimale = int(n,16)
 
+print(f"n_decimale: {n_decimale}")
+
 #messaggio da cifrare
 messaggio = 'intel inside'
 
