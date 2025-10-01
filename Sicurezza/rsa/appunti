@@ -1,0 +1,65 @@
+Primo esercizio 
+
+spiegazione generale 
+
+Ho preso il messaggio cifrato c, il modulo n e l’esponente pubblico e.
+Per decifrare RSA senza conoscere direttamente la chiave privata, ho prima trovato i due fattori primi di n, p e q, usando un ciclo che prova tutti i numeri fino a √n.
+Con questi due primi ho calcolato φ(n) = (p-1)*(q-1) e poi la chiave privata d come inverso di e modulo φ(n).
+Infine ho decifrato il messaggio con la formula m = c^d mod n e ho trasformato l’intero ottenuto in byte e poi in testo leggibile usando la funzione intero_in_byte.
+In questo modo ho ottenuto il messaggio originale.
+
+
+FATTORE PRIMO 
+
+È la moltiplicazione tra piu numeri primi che restituisce il numero di partenza
+
+
+Spiegazione ciclo for 
+
+Ho usato il ciclo per trovare un fattore primo p di n, necessario per calcolare la chiave privata RSA. Controllo tutti i numeri da 2 a √n e appena trovo un divisore senza resto lo prendo come p; l’altro fattore q si ottiene dividendo n per p. Così posso poi calcolare l’esponente privato d.
+
+COS’È PHI n
+
+φ(n) ci dice quanti numeri minori di n sono coprimi con n (cioè numeri che non hanno divisori comuni con n oltre a 1) e serve per calcolare la chiave privata in RSA
+
+Calcolo della chiave privata d
+
+d è il numero che, moltiplicato per l’esponente pubblico e, dà 1 modulo φ(n). Questo permette di invertire la cifratura e ottenere il messaggio originale
+
+
+Calcolo di m 
+
+ho usato la formula di decifratura RSA:
+il messaggio cifrato c, elevato all’esponente privato d e fatto modulo n, torna al numero intero che rappresenta il testo originale.
+
+Spiegazione funzione intero_in_byte
+
+funzione che prende un numero intero e lo trasforma in una sequenza di byte.
+Prima calcola quanti byte servono per rappresentare il numero (lunghezza), poi usa to_bytes per convertirlo.
+to_bytes : prende il numero intero e lo prepara in un formato che il computer può leggere come testo o dati.
+I byte sono ordinati in modo che il numero più grande venga per primo (big-endian).
+Così otteniamo una rappresentazione che può essere convertita facilmente in testo leggibile
+
+
+m_in_bytes
+
+È il messaggio decifrato, ma ancora come numero intero trasformato in byte. Serve perché un computer legge i dati come byte, non come numeri grandi, quindi li mettiamo in un formato interpretabile.
+
+
+messaggio_decifrato
+
+È il messaggio originale in testo leggibile. Ho preso i byte di m_in_bytes e li ho convertiti in caratteri UTF-8, così otteniamo finalmente la parola che era stata cifrata.
+
+
+
+Perche il primo esercizio è molto simile al secondo 
+
+Entrambi hanno: n (modulo), e (esponente pubblico) e un messaggio cifrato C.
+    • Lo scopo è sempre: trovare la chiave privata d per decifrare C.
+    • In entrambi gli esercizi si usa lo stesso procedimento:
+        1. Fattorizzare n in due numeri primi p e q.
+        2. Calcolare φ(n) = (p-1)(q-1).
+        3. Calcolare d come inverso modulare di e modulo φ(n).
+        4. Decifrare il messaggio con m = C^d mod n.
+Cosa puoi dire al professore:
+“Questo esercizio è simile al primo perché segue lo stesso procedimento RSA: si fattorizza n, si calcola d e poi si decifra il messaggio. La differenza è solo che il messaggio e le dimensioni dei numeri sono diversi, ma la logica resta identica.”
