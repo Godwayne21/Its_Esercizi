@@ -2,7 +2,7 @@ import React from 'react'
 import ToDoForm from './ToDoForm'
 import ToDoList from './ToDoList'
 import { useState, useEffect } from 'react'
-import { createTask, deleteTaskS, fetchTasks, toggleTaskS } from './api'
+import { createTaskService, deleteTaskService, fetchTasks, toggleTaskService } from './api'
 
 
 const API_URL = "http://localhost:4000/tasks"
@@ -26,13 +26,13 @@ const ToDoApp = () => {
       headers: { "Content-Type": "application/json" },
       body:JSON.stringify({text,completed:false})
     });*/
-    await createTask(text);
+    await createTaskService(text);
     getTasks();
   }
     const deleteTask = async (id) => {
     //    await fetch(API_URL + "/" + id, { method: "DELETE" });
 
-        await deleteTaskS(id);
+        await deleteTaskService(id);
         getTasks();
     }
 
@@ -42,7 +42,7 @@ const ToDoApp = () => {
             headers: { "Content-Type": "application/json" }, body: JSON.stringify({ completed: !completed })
         });*/
 
-        await toggleTaskS (id,completed);
+        await toggleTaskService (id,completed);
         getTasks();
     }
     useEffect(() => {

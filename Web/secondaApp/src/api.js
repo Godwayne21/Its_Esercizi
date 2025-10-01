@@ -8,17 +8,17 @@ export const fetchTasks = async () => {
 };
 
 
-export const createTask=async (text) =>{
+export const createTaskService=async (text) =>{
     await fetch(API_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body:JSON.stringify({text,completed:false})
     });}
 
-export const deleteTaskS = async (id) => {
+export const deleteTaskService = async (id) => {
         await fetch(API_URL + "/" + id, { method: "DELETE" });}
 
-export    const toggleTaskS = async (id, completed) => {
+export    const toggleTaskService = async (id, completed) => {
         await fetch(API_URL + "/" + id, {
             method: "PATCH",
             headers: { "Content-Type": "application/json" }, body: JSON.stringify({ completed: !completed })
