@@ -90,9 +90,13 @@ class Cinema():
             print("Spettatore o biglietto non trovato.")
     
     def list_available_tickets(self) -> list[str]:
-
-        for i in self.booked_tickets:
-            print (f"{i} {i.is_booked}")
+        not_booked = []
+        for ticket_id, ticket in self.tickets.items():
+            if not ticket.is_booked:
+                print (f"ID: {ticket_id} is_booked: {ticket.is_booked}")
+                not_booked.append(ticket_id)
+        
+        return not_booked
     
     def list_viewer_bookings(self,viewer_id: str) -> list[str] | str:
 
