@@ -6,8 +6,8 @@ def send_with_scapy(iface, dst_mac, src_mac, ethertype, payload, count=1):
 
 if __name__ == "__main__":
     iface = "tap0"
-    dst_mac = "00:11:22:33:44:23"
+    dst_mac = "00:11:22:33:44:11"
     src_mac = "00:11:22:33:44:34"
     ethertype = 0x88B5
-    payload = b"Hello from Scapy"
+    payload = b"Cavalluccio Marino"
     send_with_scapy(iface, dst_mac, src_mac, ethertype, payload)
