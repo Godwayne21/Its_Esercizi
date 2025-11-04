@@ -1,10 +1,25 @@
-def mcd(x:int, y:int)->int:
+import string
 
-    while y:
+def count_word(liz:list[str]) -> dict[str,int]:
 
-        x,y = y, x % y
+    diz = {}
+
+    for i in liz:
+        i = i.lower()
+        for x in i:
+            if x in string.punctuation:
+                x.replace()
+        
+            x.replace(" ", '""')
+        
+        liz_clean = i.split()
+            
+    for word in liz_clean:
+        if word not in diz:
+            count = 0
+            diz[word] = 1
+        
+        else:
+            diz[word]  = count+1
     
-    return x
-
-
-print(mcd(12,18))
+    return diz
