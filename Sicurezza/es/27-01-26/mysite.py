@@ -65,7 +65,7 @@ def get_db():
     if 'db' not in g:
         # Connect to MySQL, witouth autocommit and dbname
         g.db = pymysql.connect(
-            host="127.0.0.1",
+            host="10.8.0.27",
             user="root",
             port=13306,
             password="root",
@@ -80,7 +80,7 @@ def get_db_nodatabase():
     """
     # Connect to MySQL, witouth autocommit and dbname
     g.db = pymysql.connect(
-        host="127.0.0.1",
+        host="10.8.0.27",
         user="root",
         port=13306,
         password="root",
@@ -94,7 +94,7 @@ def get_db_nodatabase():
 
     # Connect to MySQL, with dbname
     g.db = pymysql.connect(
-        host="127.0.0.1",
+        host="10.8.0.27",
         user="root",
         port=13306,
         password="root",
