@@ -1,18 +1,18 @@
-introduction 
-3) cambi 
-crypto{sh0pp1ng_f0r_fl4g5}
+challenge sito https://cryptohack.org/challenges/general/ 
 
-encoding 
-1) 
-a = [99, 114, 121, 112, 116, 111, 123, 65, 83, 67, 73, 73, 95, 112, 114, 49, 110, 116, 52, 98, 108, 51, 125]
-x = []
+INTRODUCTION
 
-for i in a:
-    x.append(chr(i))
+3) Network Attacks -> crypto{sh0pp1ng_f0r_fl4g5}
 
-# Unisce gli elementi della lista senza spazi o virgole
-print("".join(x))
 
-crypto{ASCII_pr1nt4bl3}
+GENERAL
 
-2) 
+1) ASCII -> crypto{ASCII_pr1nt4bl3}
+
+2) HEX -> crypto{You_will_be_working_with_hex_strings_a_lot}
+
+3) Base64 -> crypto/Base+64+Encoding+is+Web+Safe/
+
+4) Bytes and Big Integers -> crypto{3nc0d1n6_4ll_7h3_w4y_d0wn}
+
+5) Encoding Challenge -> crypto{3nc0d3_d3c0d3_3nc0d3}

