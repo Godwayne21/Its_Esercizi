@@ -1,7 +1,33 @@
-a = [99, 114, 121, 112, 116, 111, 123, 65, 83, 67, 73, 73, 95, 112, 114, 49, 110, 116, 52, 98, 108, 51, 125]
-x  =[]
-for i in a:
+#!/usr/bin/env python3
 
-    x.append(chr(i))
+from Crypto.Util.number import getPrime, inverse, bytes_to_long, long_to_bytes
 
-print (x)
+e = 0x10001
+
+p = getPrime(800)
+q = getPrime(800)
+n = p * q
+phi = (p - 1) * (q - 1)
+d = inverse(e, phi)
+
+# Messaggio
+FLAG = b"crypto{???????????????}"
+pt = bytes_to_long(FLAG)
+
+# Cifratura
+ct = pow(pt, e, n)
+
+
+print(f"n = {n}")
+print(f"e = {e}")
+print(f"ct = {ct}")
+
+
+pt = pow(ct, d, n)
+
+# Convertiamo il numero di nuovo in stringa (bytes)
+decrypted = long_to_bytes(pt)
+
+assert decrypted == FLAG
+
+print (FLAG)
