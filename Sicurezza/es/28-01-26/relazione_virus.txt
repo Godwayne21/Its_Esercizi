@@ -1,0 +1,26 @@
+INDIVIDUAZIONE DI UN VIRUS - Rachele Corsi e Godwayne Rasalan 
+
+Per ragioni di sicurezza quello che faccio periodicamnete è il controllo e il salvataggio dei processi attivi sul mio pc utilizzando il comando ps aux.
+
+Ciò che ho riscontrato nell'ultimo controllo mi ha insospettita in quanto compariva un processo che non ho riconosciuto con le seguenti informazioni:
+- il nome -> ubuntu_wheel
+- il PID -> 42018 
+- lo stato -> Sl (sleeping, multi-threaded)
+
+ho così deciso di indagare a fondo e ho utilizzato il comando lsof <PID> scoprendo che il processo sospetto ha utilizzato una libreria specifica di python chiamata setproctitle per camuffarne il nome 
+
+appurato ciò, per scoprire cosa stesse facendo questo virus, ho utilizzato il comdando sudo strace -p <PID> e ho notato il seguente output:
+
+newfstatat(AT_FDCWD, "/home/its/Sicurezza/esercizio_28_01/virus_simulation", {st_mode=S_IFDIR|0777, st_size=4096, ...}, 0) = 0
+
+mi sono resa conto che il virus crea una cartella nominata virus_simulation
+
+entrando nella cartella ho trovato due file:
+
+- files.log -> questo file conteneva l'elenco dei file presenti nella home, prova del fatto che il virus stesse scansionando il mio file system
+ 
+- replication.log -> questo file conteneva un elenco di date e orari in cui il virus si era, ciclicamente, replicato
+
+dopo aver stabilito il comportamento del virus l'ho terminato usando il comando kill -9 <PID> 
+
+
