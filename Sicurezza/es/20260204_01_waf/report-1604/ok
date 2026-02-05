@@ -1,0 +1,26 @@
+CAT{GET / }|
+
+CAT{GET /favicon.ico }|
+
+CAT{  }|
+
+CAT{GET /login }|
+
+CAT{GET /favicon.ico }|
+
+CAT{  }|
+
+CAT{POST /login }|
+
+CAT{GET /login }|
+
+CAT{GET /favicon.ico }|
+
+CAT{  }|
+
+CAT{GET / }|
+
+CAT{GET /favicon.ico }|
+
+CAT{  }|
+
