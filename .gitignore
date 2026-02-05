@@ -39,3 +39,17 @@ venv.bak
 # OS specific files
 .DS_Store
 Thumbs.db
+Sicurezza/es/20260204_01_waf/mysqldata/ca-key.pem
+
+# Escludi interamente la cartella dei dati del database
+**/mysqldata/
+
+# Escludi file binari e log pesanti
+*.ibd
+*.dblwr
+*.err
+
+# Escludi chiavi private (Sicurezza!)
+*.pem
+*.key
+Sicurezza/es/20260204_01_waf/mysqldata/client-cert.pem
