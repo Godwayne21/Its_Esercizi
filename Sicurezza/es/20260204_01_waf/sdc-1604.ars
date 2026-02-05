@@ -5,13 +5,29 @@ DEFINE urlset pagineok = {
 	/, /public/*, /items/*, /login/*, /MiaBanca.html
 };
 
-DEFINE AR "IlMioSito"
-	CONDITION
-		net.ipdst is in miosito
-		http.url is in pagineok
-	ACTION
-		tcp.redirect "172.26.10.152:32001"
-	;
+DEFINE AR "IlMioSitoGet"
+    CONDITION
+    http.method is HTTP.GET
+        net.ipdst is in miosito
+        http.url is in pagineok
+    ACTION
+        tcp.redirect "172.26.10.152:32001"
+    ;
+
+//Decido se far passare la POST
+//la voglio far passare solo se ci sono
+//nella username solo caratteri buoni
+
+DEFINE set vuoto = { "A" };
+DEFINE AR "IlMioSitoPost"
+    CONDITION
+    http.method is HTTP.POST
+        net.ipdst is in miosito
+        http.url is "/login"
+        http.data["username"] is "" "[a-zA-Z]+" ""
+    ACTION
+        tcp.redirect "172.26.10.152:32001"
+    ;
 
 DEFINE AR "BucoNero"
 	CONDITION
