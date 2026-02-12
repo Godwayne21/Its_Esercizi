@@ -1,0 +1,7 @@
+Progettazione dei tipi di dato
+
+CREATE DOMAIN IntegerGZ AS INTEGER
+	CHECK (value > 0);
+
+CREATE DOMAIN IntegerGEZ AS INTEGER
+	CHECK (value >= 0);	

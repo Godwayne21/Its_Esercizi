@@ -1,0 +1,8 @@
+Specifica classe Persona
+
+[V.Persona.complete]
+	Per ogni oggetto p:Persona:
+		- esiste s:Staff t.c. (s,p):staff_isa_pers, oppure
+		- eisste c:Cliente t.c. (c,p):cliente_isa_pers
+
+	

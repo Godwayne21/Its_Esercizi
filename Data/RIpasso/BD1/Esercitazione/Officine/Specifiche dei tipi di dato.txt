@@ -1,0 +1,44 @@
+Specifiche dei tipi di dato
+
+CREATE DOMAIN StringNotNull as VARCHAR
+	CHECK (value is not NULL);
+
+CREATE DOMAIN Civico as VARCHAR
+	CHECK (value ~ '[0-9]+(/[a-z]+)?' AND value is not null);
+
+CREATE DOMAIN Cap as CHAR(5)
+	CHECK (value ~ '[0-9]{5}' and value is not null);
+
+
+CREATE TYPE Indirizzo AS (
+	via StringNotNull,
+	civico Civico,
+	cap Cap
+);
+
+
+CREATE DOMAIN Targa AS CHAR(7)
+	CHECK (VALUE ~ '[A-Z]{2}[0-9]{3}[A-Z]{2}');
+
+
+CREATE DOMAIN CodiceFiscale AS CHAR(16) 
+	CHECK (VALUE ~ '...');
+
+CREATE DOMAIN Telefono AS VARCHAR 
+	CHECK (VALUE ~ '+?[0-9]+');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

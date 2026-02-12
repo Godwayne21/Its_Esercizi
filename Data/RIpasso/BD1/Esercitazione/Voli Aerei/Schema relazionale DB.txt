@@ -1,0 +1,25 @@
+Schema relazionale DB
+
+Aeroporto(_codice_:char(3), nome:varchar)
+
+
+-- SENZA ACCORPAMENTO DI 'PARTENZA' E 'ARRIVO'
+
+Volo(_codice_:varchar, durata_minuti:IntegerGZ)
+	fk: (codice) references partenza(volo)
+	fk: (codice) references arrivo(volo)
+
+partenza( _volo_:varchar,  aeroporto:char(3) )
+	fk: (volo) references Volo(codice)
+	fk: (aeroporto) references Aeroporto(codice)
+
+arrivo( _volo_:varchar,  aeroporto:char(3) )
+	fk: (volo) references Volo(codice)
+	fk: (aeroporto) references Aeroporto(codice)
+
+
+-- CON ACCORPAMENTO DI 'PARTENZA', 'ARRIVO'
+
+Volo(_codice_:varchar, durata_minuti:IntegerGZ, partenza:char(3), arrivo:char(3))
+	fk: (partenza) references Aeroporto(codice)
+	fk: (arrivo) references Aeroporto(codice)
