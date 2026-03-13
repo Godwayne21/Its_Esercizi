@@ -1,0 +1,2 @@
+crccheck 772245_0.bin
+copy 772245_0.bin
