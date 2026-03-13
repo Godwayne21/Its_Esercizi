@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>XSS Learning Lab</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #e9ecef; color: #333; line-height: 1.6; padding: 20px; }
+        .container { max-width: 800px; margin: auto; display: flex; flex-direction: column; gap: 20px; }
+        .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .vulnerable-zone { border-left: 5px solid #dc3545; background: #fff5f5; }
+        .educational-zone { border-left: 5px solid #17a2b8; background: #f0faff; }
+        code { background: #f8f9fa; padding: 2px 5px; border-radius: 4px; color: #d63384; font-weight: bold; }
+        pre { background: #272822; color: #f8f8f2; padding: 15px; border-radius: 8px; overflow-x: auto; }
+        .highlight { color: #a6e22e; } /* Colore per il codice sicuro */
+        .danger { color: #f92672; }    /* Colore per il codice vulnerabile */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card vulnerable-zone">
+            <h2>🔍 Motore di Ricerca Interno</h2>
+            <p>Questo modulo simula una barra di ricerca comune.</p>
+            <form method="GET" action="/">
+                <input type="text" name="query" placeholder="Cerca qualcosa..." style="width:70%; padding:10px;">
+                <button type="submit" style="padding:10px 20px; cursor:pointer;">Cerca</button>
+            </form>
+
+            {% if q %}
+                <hr>
+                <p>Risultato per: <strong>{{ q | safe }}</strong></p>
+                <p style="font-size: 0.8em; color: #666;">(Se vedi un alert o uno stile strano qui sopra, l'XSS ha funzionato!)</p>
+            {% endif %}
+        </div>
+
+        <div class="card educational-zone">
+            <h3>🎓 Cosa sta succedendo?</h3>
+            <p>Il server Flask riceve la tua stringa tramite l'URL e la inserisce direttamente nel codice HTML della pagina.</p>
+            
+            <h4>Il problema nel codice:</h4>
+            <pre><code><span class="comment">// In index.html</span>
+<span class="danger">{{ "{{" }} q | safe {{ "}}" }}</span></code></pre>
+            <p>L'uso del filtro <code>| safe</code> dice a Flask: <em>"Non pulire i caratteri speciali, mi fido di questo input"</em>. Questo permette a tag come <code>&lt;script&gt;</code> di essere eseguiti dal browser.</p>
+
+            <h4>Come risolverlo:</h4>
+            <p>Rimuovi semplicemente il filtro <code>| safe</code>. Flask userà il suo sistema di <strong>Auto-Escaping</strong> predefinito:</p>
+            <pre><code><span class="highlight">{{ "{{" }} q {{ "}}" }}</span></code></pre>
+            <p>In questo modo, il browser riceverà <code>&amp;lt;script&amp;gt;</code> invece di <code>&lt;script&gt;</code>, visualizzando il codice come semplice testo senza eseguirlo.</p>
+        </div>
+    </div>
+</body>
+</html>
