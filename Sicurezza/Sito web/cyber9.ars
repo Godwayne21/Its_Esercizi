@@ -1,0 +1,6 @@
+DEFINE AR "TestBloccoIDOR"
+    CONDITION
+        http.query["user_id"] == "2"  // Forza il blocco se chiedi Bob
+    ACTION
+        ANSWER "<h1>🛡️ ARS HA BLOCCATO BOB!</h1>"
+    ;
