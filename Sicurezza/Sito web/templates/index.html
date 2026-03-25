@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>Broken Access Control Lab</title>
+    <title>SQL Injection Lab</title>
     <style>
         body { font-family: 'Segoe UI', sans-serif; background-color: #e9ecef; color: #333; line-height: 1.6; padding: 20px; }
         .container { max-width: 800px; margin: auto; display: flex; flex-direction: column; gap: 20px; }
@@ -10,46 +10,63 @@
         .vulnerable-zone { border-left: 5px solid #ffc107; background: #fffcf2; }
         .educational-zone { border-left: 5px solid #17a2b8; background: #f0faff; }
         code { background: #f8f9fa; padding: 2px 5px; border-radius: 4px; color: #d63384; font-weight: bold; }
-        pre { background: #272822; color: #f8f8f2; padding: 15px; border-radius: 8px; overflow-x: auto; }
+        pre { background: #272822; color: #f8f8f2; padding: 15px; border-radius: 8px; overflow-x: auto; font-size: 14px;}
         .highlight { color: #a6e22e; } 
         .danger { color: #f92672; }    
-        .secret-box { background-color: #f8d7da; border: 1px solid #f5c2c7; padding: 15px; border-radius: 5px; color: #842029; margin-top: 15px; }
+        .secret-box { background-color: #f8d7da; border: 1px solid #f5c2c7; padding: 15px; border-radius: 5px; color: #842029; margin-bottom: 15px;}
+        input[type="text"] { padding: 8px; width: 60%; border: 1px solid #ccc; border-radius: 4px; }
+        button { padding: 8px 15px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+        .error-msg { color: red; font-weight: bold; }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="card vulnerable-zone">
-            <h2>👤 Cruscotto Utente Privato</h2>
-            <p>Benvenuto nel tuo portale personale. Qui puoi visualizzare i tuoi dati sensibili.</p>
+            <h2>🔍 Ricerca Utenti</h2>
+            <p>Cerca un utente nel database per visualizzare il suo profilo.</p>
             
-            <p><strong>Stai visualizzando l'account ID:</strong> <code>{{ current_id }}</code></p>
+            <form method="GET" action="/">
+                <input type="text" name="search" value="{{ search_query }}" placeholder="Es. Alice">
+                <button type="submit">Cerca</button>
+            </form>
 
-            {% if user_data %}
-                <hr>
-                <h3>Profilo di: {{ user_data.name }}</h3>
-                <p><strong>Ruolo:</strong> {{ user_data.role | upper }}</p>
-                
-                <div class="secret-box">
-                    <strong>🔒 Dato Sensibile:</strong> {{ user_data.secret }}
-                </div>
+            <hr>
+            <h4>Query eseguita sul Database (Dietro le quinte):</h4>
+            <pre><code>{{ sql_statement }}</code></pre>
+
+            {% if error_msg %}
+                <p class="error-msg">Errore Database: {{ error_msg }}</p>
+            {% endif %}
+
+            {% if results %}
+                <h3>Risultati:</h3>
+                {% for row in results %}
+                    <div class="secret-box">
+                        <strong>Nome:</strong> {{ row['name'] }} | <strong>Ruolo:</strong> {{ row['role'] }}<br>
+                        <strong>🔒 Segreto:</strong> {{ row['secret'] }}
+                    </div>
+                {% endfor %}
             {% else %}
-                <hr>
-                <p style="color: red;">Utente non trovato nel database.</p>
+                {% if not error_msg %}
+                    <p style="color: gray;">Nessun utente trovato.</p>
+                {% endif %}
             {% endif %}
         </div>
 
         <div class="card educational-zone">
-            <h3>🎓 Cosa sta succedendo? (IDOR / Broken Access Control)</h3>
-            <p>Il server ti mostra i dati basandosi unicamente sul parametro <code>user_id</code> presente nell'URL (la barra degli indirizzi del tuo browser).</p>
+            <h3>🎓 Cosa sta succedendo? (SQL Injection)</h3>
+            <p>Il server prende esattamente ciò che scrivi nella barra di ricerca e lo "incolla" direttamente in un comando SQL per il database.</p>
             
             <h4>Il problema nel codice (app.py):</h4>
-            <pre><code><span class="danger">user_id = request.args.get('user_id', '1')</span>
-<span class="danger">user_data = USERS_DB.get(user_id)</span></code></pre>
-            <p>Il server non si fa la domanda cruciale: <em>"La persona che sta richiedendo l'ID 3, è davvero autorizzata a vedere l'ID 3?"</em>. Si fida ciecamente dell'input.</p>
+            <pre><code><span class="danger">sql_statement = f"SELECT * FROM users WHERE name = '{search_query}'"</span></code></pre>
 
             <h4>Prova ad hackerarlo!</h4>
-            <p>Guarda l'URL in alto nel tuo browser. Probabilmente finisce con <code>/</code> o <code>/?user_id=1</code>.</p>
-            <p>Prova a modificare manualmente l'URL aggiungendo o cambiando il parametro in <code>/?user_id=2</code> o <code>/?user_id=3</code> e premi Invio. Riuscirai a leggere i segreti degli altri utenti e perfino a rubare la "Flag" dell'amministratore!</p>
+            <ul>
+                <li><strong>Il Bypass dell'autenticazione:</strong> Invece di cercare un nome, prova a digitare questo payload esatto nella barra di ricerca: <br><code>' OR '1'='1</code></li>
+                <li><strong>Cosa succede:</strong> La query diventa <code>SELECT * FROM users WHERE name = '' OR '1'='1'</code>. Poiché 1 è sempre uguale a 1, il database restituirà <em>tutti</em> gli utenti, inclusa la Flag dell'Amministratore!</li>
+                <li><strong>L'Errore:</strong> Prova a inserire solo un singolo apice: <code>'</code> per mandare in crash la sintassi SQL e vedere l'errore nudo e crudo.</li>
+            </ul>
         </div>
     </div>
 </body>

@@ -1,27 +1,18 @@
-// DEFINE ipset dichiara un insieme di indirizzi IP gestiti con accesso diretto (costo O(1)
-DEFINE ipset miosito = { *.*.*.*:32456 };
 DEFINE ipset tuttigliip = { *.*.*.*:* };
+DEFINE set regole = {"%27"};
 
-(*
-	quando faccio localhost:
-	se un utente ha chiesto /login/1, allora può chiedere esclusivamente /profile/1
-	Inoltre c'è un session cookie che si chiama Cookie: session=eyJ1c2VyX2lkIjoxfQ.abBE6A.lzDO0SmzvrO0Ir2IMFRY7eqZTs0
-*)
+// REGOLA 1: Blocco SQL Injection
+DEFINE AR "Block_SQLi"
+    CONDITION
+        net.ipdst is in tuttigliip
+		CALL "va::vaeng::fast-scan-stringset" WITH "checkbody", "regole", "false", http.uri, "false"
+    ACTION
+		tcp.redirect "127.0.0.1:5000"
+    ;
 
 DEFINE AR "BucoNero"
-	CONDITION
+	CONDITION 
 		net.ipdst is in tuttigliip
 	ACTION
-		ANSWER "<p>Richiesta accettata correttamente</p>"
-	;
-
-DEFINE VR PrintAll
-	CONDITION
-		obs.event is net.send
-	ACTION
-		REPORT log { CAT { 
-			http.header["0_FULL_DATA"], 
-			" - ",
-			http.data["0_FULL_DATA"]
-		}}
+        ANSWER "<html><body style='text-align:center;background:#f8d7da;color:#842029;padding:50px;'><h1>🛑 WAF BLOCK</h1><p>Attacco SQL Injection rilevato e bloccato.</p></body></html>"
 	;

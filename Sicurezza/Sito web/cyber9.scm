@@ -304,3 +304,30 @@
 ;; ;;(CmdManager 'add-handler "sub" JSONAPI::sub)
 ;; ;;(CmdManager 'add-handler "mul" JSONAPI::mul)
 ;; ;;(CmdManager 'add-handler "div" JSONAPI::div)
+
+;; =================================================================
+;; WAF PROXY LOGIC: Inoltro del traffico pulito
+;; =================================================================
+
+(defun WAF::Proxy (actionl pbuf)
+  ;; In caso di errore imprevisto del proxy, restituisci 500
+  (eis::GiveErrorHTTP500) =>
+  
+  (Show! "=> Traffico pulito. Inoltro la richiesta a Flask sulla porta 5000...")
+  
+  ;; PassToServer inoltra la richiesta originale. 
+  ;; Lasciando i parametri come stringhe vuote (""), il WAF inoltrerà 
+  ;; esattamente l'URL, gli header e il body ricevuti dal client.
+  (eis::BaseLib::PassToServer "127.0.0.1" "5000" "" "" "" "" "")
+)
+
+;; Colleghiamo il nome "ProxyToFlask" (usato nel file .ars) alla funzione Lisp
+(eis::function-pointer-add "ProxyToFlask" WAF::Proxy)
+
+(defun WAF::Proxy (actionl pbuf)
+  (eis::GiveErrorHTTP500) =>
+  (Show! "=> Richiesta lecita: inoltro a Flask sulla porta 5000...")
+  (eis::BaseLib::PassToServer "127.0.0.1" "5000" "" "" "" "" "")
+)
+
+(eis::function-pointer-add "ProxyToFlask" WAF::Proxy)
