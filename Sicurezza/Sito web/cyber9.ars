@@ -1,5 +1,5 @@
 DEFINE ipset tuttigliip = { *.*.*.*:* };
-DEFINE set regole = {"%27"};
+DEFINE set regole = {"--"};
 
 // REGOLA 1: Blocco SQL Injection
 DEFINE AR "Block_SQLi"
@@ -14,4 +14,5 @@ DEFINE AR "BucoNero"
 	CONDITION 
 		net.ipdst is in tuttigliip
 	ACTION
-        ANSWER "<html><body style='text-align:center;background:#f8d7da;color:#842029;padding:50px;'><h1>WAF BLOCK</h1><p>Attacco SQL Injection rilevato e bloccato.</p></body></html>"
+        ANSWER "<html><body style='text-align:center;background:#f8d7da;color:#842029;padding:50px;'><h1>WAF WAF WAF</h1><p>Attacco SQL Injection rilevato e bloccato.</p></body></html>"
+        ;
